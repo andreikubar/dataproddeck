@@ -1,0 +1,48 @@
+---
+title       : Project in Data Products class as part of the DataScience specialization at coursera.org
+subtitle    : MPG estimation Shiny app
+author      : Andrei Kuebar
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Shiny app created for this project 
+URL:https://ierdna.shinyapps.io/project/
+
+This app allowes the user to estimate the Mileage per Gallon of gas of a car based on three parametes:
+ - horse power
+ - 1/4 mile time
+ - transmission type
+
+--- .class #id 
+## Model
+To estimate the MPG value a multivariable linear regression model was created
+
+R dataset 'mtcars' was used as the data source
+```{r}
+data(mtcars)
+dim(mtcars)
+```
+
+--- .class #id
+## Model fit
+
+Linear model was fitted as follows:
+```{r}
+fit <- lm( mpg ~ hp + qsec + am , mtcars)
+summary(fit)$coefficient
+```
+
+--- .class #id
+## Shiny app and source
+ - MPG Shiny app is found here: https://ierdna.shinyapps.io/project/
+ - GitHub source for the app: https://github.com/andreikubar/dataproducts/tree/master/project
+
+
+
+
